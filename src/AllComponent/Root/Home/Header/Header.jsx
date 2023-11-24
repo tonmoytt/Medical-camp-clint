@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import img from './../../../../assets/Images/logo.png' 
 import { FaFacebook,FaTwitter,FaGoogle,FaPinterest,FaInstagram } from "react-icons/fa";
-import Contact from './Contact/Contact';
+
 
 const Header = () => {
     return (
