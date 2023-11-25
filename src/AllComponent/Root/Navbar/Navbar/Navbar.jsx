@@ -21,33 +21,29 @@ const Navbar = () => {
             })
     }
     const Navlink = <>
-        <li> <NavLink to="/">Home</NavLink></li>
-        <AvailableCamp></AvailableCamp>
-        <li> <NavLink to="/dashboard">DashBoard</NavLink></li>
-        <li> <NavLink to="/contact">Contact Us</NavLink></li>
+        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">Home</NavLink></li>
+      <div className="text-lg font-serif hover:text-cyan-400"><AvailableCamp></AvailableCamp></div> 
+        <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
+        <li className="text-lg font-semibold   hover:text-cyan-400"> <NavLink to="/contact">Contact Us</NavLink></li>
         {
             user ? <>
                 <div className="flex gap-2">
-                    <div className="grid gap-2 ml-96">
-                        <p className="mr-2 font-bold">{user?.displayName}</p>
+                     
+                        {/* <p className="mr-2 font-bold">{user?.displayName}</p> */}
 
-                        <div className="flex items-center ">
+                        <div className="flex items-center ml-60 mr-10">
                             <img className="h-10 w-10 mr-2 rounded-full" src={user?.photoURL} alt="" />
-                            <Link className="" to='/signup'> <button onClick={hendelsignout}>Signout</button></Link>
+                            <Link className="btn btn-outline btn-secondary" to='/signup'> <button onClick={hendelsignout}>Signout</button></Link>
                         </div>
-
-
-
-
-                    </div>
+ 
                 </div>
             </>
                 :
                 <>
                     <div className="flex">
-                        <li> <NavLink to="/login">Login</NavLink></li>
+                        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/login">Login</NavLink></li>
 
-                        <div className="flex items-center ml-96">
+                        <div className="flex items-center ml-60 mr-10">
                             <img className="h-10 w-10 mr-2 rounded-full" src={img} alt="" />
                             <Link className="btn " to='/signup'>Register</Link>
                         </div>
@@ -66,7 +62,11 @@ const Navbar = () => {
 
     </>
     return (
-        <div>
+        <div className="mt-2">
+            <div>
+                <hr />
+                <hr />
+            </div>
             <div className="navbar items-center bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -79,7 +79,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">HealHaven Camps</a>
+                    <a className="  btn-ghost text-3xl"><span className="text-5xl font-serif text-red-400">H</span>ealh<span className="text-4xl font-serif text-emerald-300">A</span>ven Camps</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -89,6 +89,20 @@ const Navbar = () => {
                     </ul>
                 </div>
 
+            </div>
+            <div>
+                {/* <p className="bg-amber-50">.</p> */}
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                <hr />
             </div>
         </div>
     );

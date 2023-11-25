@@ -10,7 +10,7 @@ const AvailableCamp = () => {
                  
                 <li>
                     <details>
-                        <summary>
+                        <summary className="text-lg font-semibold ">
                         Available Camp
                         </summary>
                         <ul className="p-2 bg-base-100">
