@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthConnect } from "../Authinction";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const Login = () => {
-    const { login } = useContext(AuthConnect)
+    const { login, } = useContext(AuthConnect)
     const HendelLogin = event => {
         event.preventDefault()
         const form = event.target;
@@ -22,6 +23,8 @@ const Login = () => {
                 alert('error login hossce na')
             })
     }
+
+    
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -53,6 +56,7 @@ const Login = () => {
                     <div className="text-center py-4">
                         <p className="text-lg">Do not have an account? <Link className="btn-outline btn-secondary" to='/signup'>Register</Link></p>
                     </div>
+                     
                 </div>
             </div>
         </div>

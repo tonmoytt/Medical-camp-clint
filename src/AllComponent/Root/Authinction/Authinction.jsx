@@ -22,10 +22,9 @@ const Authinction = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const Google = () => {
-        setloading(true)
+    const createGoogle=() =>{
         return signInWithPopup(auth, provider)
-    }
+    } 
 
     const Updateuser= (name,photo) => {
         return updateProfile(auth.currentUser, {
@@ -47,7 +46,7 @@ const Authinction = ({ children }) => {
 
     }, [])
 
-    const authInfo = { user, loading, CreateUser, login,Updateuser, Google,logout }
+    const authInfo = { user, loading, CreateUser, login,Updateuser,createGoogle,logout }
     return (
         <AuthConnect.Provider value={authInfo}>
             {children}

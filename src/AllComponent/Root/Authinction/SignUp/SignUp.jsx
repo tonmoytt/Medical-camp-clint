@@ -6,7 +6,7 @@ import swal from "sweetalert";
 
 const SignUp = () => {
     const [password, setpassword] = useState('')
-    const { CreateUser, Google,Updateuser } = useContext(AuthConnect)
+    const { CreateUser,createGoogle,Updateuser } = useContext(AuthConnect)
     const HendelSignUp = event => {
         event.preventDefault()
         const form = event.target;
@@ -57,16 +57,15 @@ const SignUp = () => {
             })
     }
     const GoogleHendel = () => {
-        Google()
-            .then(result => {
-                console.log(result.user);
-                swal("Success!", "successfully registred with Google!", "success");
-
-            })
-            .catch(error => {
-                console.error(error)
-                swal("error", "Please  try again!", "error")
-            })
+        console.log('clicked');
+        createGoogle()
+        .then(result =>{
+            console.log(result.user);
+            alert('succes google')
+        })
+        .catch(error =>{
+            console.error(error);
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">

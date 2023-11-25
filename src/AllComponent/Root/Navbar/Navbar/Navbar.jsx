@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthConnect } from "../../Authinction/Authinction";
 import swal from "sweetalert";
 import img from './../../../../assets/Images/icon user.jpg'
+import AvailableCamp from "./AvailableCamp/AvailableCamp";
 
 
 const Navbar = () => {
@@ -21,12 +22,14 @@ const Navbar = () => {
     }
     const Navlink = <>
         <li> <NavLink to="/">Home</NavLink></li>
-        <li> <NavLink to="/about">About Us</NavLink></li>
+        <AvailableCamp></AvailableCamp>
+        <li> <NavLink to="/dashboard">DashBoard</NavLink></li>
+        <li> <NavLink to="/contact">Contact Us</NavLink></li>
         {
             user ? <>
                 <div className="flex gap-2">
                     <div className="grid gap-2 ml-96">
-                        <p className="mr-2">{user?.displayName}</p>
+                        <p className="mr-2 font-bold">{user?.displayName}</p>
 
                         <div className="flex items-center ">
                             <img className="h-10 w-10 mr-2 rounded-full" src={user?.photoURL} alt="" />
