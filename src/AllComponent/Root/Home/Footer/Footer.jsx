@@ -13,7 +13,7 @@ const Footer = () => {
              <button> <p> Quality police</p></button>      
              <button><p> Customer Police</p></button>       
              <button>  <Link to='/aboutus'>About Us</Link>   </button>      
-             <button> <p> Videos</p></button>       
+             <button> <Link to='/contact'> Contsct us</Link></button>       
                     
                 <button><p> Sitemap</p></button>   
                    
