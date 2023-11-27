@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Showcamp from "./Showcamp";
+import swal from "sweetalert";
 
  
 
@@ -12,6 +13,7 @@ const AvailableCamp = () => {
         .then(data =>{
             setpost(data);
             console.log(data);
+            swal("Post create", " successful", "success");
         })
     },[])
     return (

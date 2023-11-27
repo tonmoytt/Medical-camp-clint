@@ -1,18 +1,19 @@
 import { useContext } from "react";
 import { AuthConnect } from "../Authinction";
-import { NavLink } from "react-router-dom";
+import {  Navigate, useLocation } from "react-router-dom";
 
 
 // eslint-disable-next-line react/prop-types
 const PrivetRoute = ({ children }) => {
     const { user, loading } = useContext(AuthConnect)
+    const location =useLocation()
     if (loading) {
-        return <progress className="progress w-56"></progress>
+        return <progress className="progress w-full mt-6"></progress>
     }
    
     if (user) {
         return children
     }
-    return <NavLink to='/login'></NavLink>
+    return <Navigate to='/login'  state={{from : location}} replace></Navigate>
 };
     export default PrivetRoute;

@@ -49,11 +49,11 @@ const SignUp = () => {
                     console.error(error);
                      
                 })
-                alert('sucessfully kam hose')
+                swal("Success!", "Registered Successfully", "success");
             })
             .catch(error => {
                 console.error(error);
-                alert('error kam hossce na')
+                swal("error!", "check, and try again!", "error");
             })
     }
     const GoogleHendel = () => {
@@ -61,7 +61,7 @@ const SignUp = () => {
         createGoogle()
         .then(result =>{
             console.log(result.user);
-            alert('succes google')
+            swal("Success!", "Google Registertion Successfully", "success");
         })
         .catch(error =>{
             console.error(error);

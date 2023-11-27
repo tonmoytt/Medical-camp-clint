@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       // dashboard//
       {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute> 
       },
       {
         path: '/addcamp',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <Detials></Detials>,
+        element: <PrivetRoute><Detials></Detials></PrivetRoute> ,
         loader: () => fetch('http://localhost:5000/post')
 
       },
