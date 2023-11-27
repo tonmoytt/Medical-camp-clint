@@ -21,21 +21,21 @@ const Authinction = ({ children }) => {
         setloading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
-
-    const createGoogle=() =>{
+    // google login//
+    const createGoogle = () => {
         return signInWithPopup(auth, provider)
-    } 
-
-    const Updateuser= (name,photo) => {
-        return updateProfile(auth.currentUser, {
-            displayName:name, photoURL:photo
-        }) 
     }
-    const logout=()=>{
+
+    const Updateuser = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        })
+    }
+    const logout = () => {
         setloading(true)
         return signOut(auth)
     }
-    
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (Curreuser) => {
             console.log(Curreuser);
@@ -46,7 +46,7 @@ const Authinction = ({ children }) => {
 
     }, [])
 
-    const authInfo = { user, loading, CreateUser, login,Updateuser,createGoogle,logout }
+    const authInfo = { user, loading, CreateUser, login, Updateuser, createGoogle, logout }
     return (
         <AuthConnect.Provider value={authInfo}>
             {children}

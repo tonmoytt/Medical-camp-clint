@@ -22,7 +22,8 @@ const Navbar = () => {
     }
     const Navlink = <>
         <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">Home</NavLink></li>
-      <div className="text-lg font-serif hover:text-cyan-400"><AvailableCamp></AvailableCamp></div> 
+        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
+     
         <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
         <li className="text-lg font-semibold   hover:text-cyan-400"> <NavLink to="/contact">Contact Us</NavLink></li>
         {

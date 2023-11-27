@@ -28,22 +28,24 @@ const Testimonial = () => {
     return (
         <div>
             <p className="font-bold text-3xl text-center">Our Customers review</p>
-            
 
-            <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
-                freeMode={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[FreeMode, Pagination]}
-                className="mySwiper"
-            >
-                 <div>
-                    {
-                        rating?.map(ratings => <SwiperSlide key={ratings.Id}>
-                             <div className='text-center my-10 mx-auto w-1/2'>
+            <div className="border-3">
+
+
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    freeMode={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[FreeMode, Pagination]}
+                    className="mySwiper"
+                >
+                    <div>
+                        {
+                            rating?.map(ratings => <SwiperSlide key={ratings.Id}>
+                                <div className='text-center my-10 mx-auto w-1/2'>
                                     <Rating
                                         style={{ maxWidth: 180 }}
                                         value={ratings.rating}
@@ -51,39 +53,19 @@ const Testimonial = () => {
                                     />
                                 </div>
 
-                          <div className='m-20 text-center'>
+                                <div className='m-20 text-center'>
                                     <p>{ratings.details}</p>
                                     <p className='text-xl font-semibold mt-6'>{ratings.name}</p>
                                 </div>
 
-                        </SwiperSlide>)
-                    }
-                 </div>
-                 
-            </Swiper>
-
-            {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-
-                <div>
-                    {
-                       rating.map(data =>
-                            <SwiperSlide key={data._id}>
-                                <div className='text-center my-10 mx-auto w-3/4'>
-                                    <Rating
-                                        style={{ maxWidth: 180 }}
-                                        value={data.rating}
-                                        readOnly
-                                    />
-                                </div>
-
-                                <div className='m-20 text-center'>
-                                    <p>{data.details}</p>
-                                    <p className='text-xl font-semibold mt-6'>{data.name}</p>
-                                </div>
                             </SwiperSlide>)
-                    }
-                </div>
-            </Swiper> */}
+                        }
+                    </div>
+
+                </Swiper>
+            </div>
+
+
         </div>
     );
 };

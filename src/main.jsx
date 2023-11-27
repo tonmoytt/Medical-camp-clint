@@ -16,6 +16,8 @@ import AvailableCamp from './AllComponent/Root/Navbar/Navbar/AvailableCamp/Avail
 import PrivetRoute from './AllComponent/Root/Authinction/PrivetRoute/PrivetRoute';
 import Priticipant from './AllComponent/Root/Navbar/Navbar/AvailableCamp/Priticipant/Priticipant';
 import AboutUs from './AllComponent/Root/Navbar/Navbar/AboutUs/AboutUs';
+import Dashboard from './AllComponent/Root/Navbar/Navbar/Dashboard/Dashboard';
+import AddCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/AddCamp/AddCamp';
 
 const router = createBrowserRouter([
   {
@@ -36,10 +38,15 @@ const router = createBrowserRouter([
         path: '/participant',
         element:  <Priticipant></Priticipant>
       },
+      // dashboard//
       {
         path: '/dashboard',
-        element:  <Contact></Contact>
+        element:  <Dashboard></Dashboard>
       },
+      {
+        path: '/addcamp',
+        element:  <AddCamp></AddCamp>
+         },
       {
         path: '/contact',
         element: <Contact></Contact>
