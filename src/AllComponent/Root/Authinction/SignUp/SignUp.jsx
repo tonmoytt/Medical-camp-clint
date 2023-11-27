@@ -50,6 +50,7 @@ const SignUp = () => {
                      
                 })
                 swal("Success!", "Registered Successfully", "success");
+                event.target.reset()
             })
             .catch(error => {
                 console.error(error);

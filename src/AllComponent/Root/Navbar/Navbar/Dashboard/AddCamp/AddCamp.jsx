@@ -1,3 +1,4 @@
+import swal from "sweetalert";
 import Dashboard from "../Dashboard";
 
 
@@ -26,7 +27,7 @@ const AddCamp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                alert('mal gese')
+                swal("Success!", "Camp created", "success");
             })
     }
     return (

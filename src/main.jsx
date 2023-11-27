@@ -19,6 +19,7 @@ import AboutUs from './AllComponent/Root/Navbar/Navbar/AboutUs/AboutUs';
 import Dashboard from './AllComponent/Root/Navbar/Navbar/Dashboard/Dashboard';
 import AddCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/AddCamp/AddCamp';
 import Detials from './AllComponent/Root/Navbar/Navbar/AvailableCamp/DEtials/Detials';
+import ManageRequest from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageRequest/ManageRequest';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/addcamp',
         element: <AddCamp></AddCamp>
+      },
+      {
+        path: '/request',
+        element: <ManageRequest></ManageRequest>
       },
       {
         path: '/details/:id',
