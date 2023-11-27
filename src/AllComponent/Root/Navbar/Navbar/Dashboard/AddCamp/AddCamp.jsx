@@ -16,6 +16,18 @@ const AddCamp = () => {
         const description = form.description.value
         const user = { name, fees, location, provider, healthcare, target, photo, date, description }
         console.log(user);
+        fetch('http://localhost:5000/post', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                alert('mal gese')
+            })
     }
     return (
         <div>
@@ -99,8 +111,8 @@ const AddCamp = () => {
                         </div>
                         {/* sixth section */}
                         <div className="text-center pb-10">
-                            <button > 
-                                 <input className=" mt-10 px-40 text-center btn btn-outline btn-secondary" type="submit" value="Add To Camp" />
+                            <button >
+                                <input className=" mt-10 px-40 text-center btn btn-outline btn-secondary" type="submit" value="Add To Camp" />
                             </button>
                         </div>
                     </form>

@@ -18,6 +18,7 @@ import Priticipant from './AllComponent/Root/Navbar/Navbar/AvailableCamp/Pritici
 import AboutUs from './AllComponent/Root/Navbar/Navbar/AboutUs/AboutUs';
 import Dashboard from './AllComponent/Root/Navbar/Navbar/Dashboard/Dashboard';
 import AddCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/AddCamp/AddCamp';
+import Detials from './AllComponent/Root/Navbar/Navbar/AvailableCamp/DEtials/Detials';
 
 const router = createBrowserRouter([
   {
@@ -32,40 +33,46 @@ const router = createBrowserRouter([
       // Navbar//
       {
         path: '/camp',
-        element: <PrivetRoute><AvailableCamp></AvailableCamp></PrivetRoute>  
+        element: <PrivetRoute><AvailableCamp></AvailableCamp></PrivetRoute>
       },
       {
         path: '/participant',
-        element:  <Priticipant></Priticipant>
+        element: <Priticipant></Priticipant>
       },
       // dashboard//
       {
         path: '/dashboard',
-        element:  <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>
       },
       {
         path: '/addcamp',
-        element:  <AddCamp></AddCamp>
-         },
+        element: <AddCamp></AddCamp>
+      },
+      {
+        path: '/details/:id',
+        element: <Detials></Detials>,
+        loader: () => fetch('http://localhost:5000/post')
+
+      },
       {
         path: '/contact',
         element: <Contact></Contact>
       },
       // authonction
       {
-        path:'/signup',
-        element:<SignUp></SignUp>
+        path: '/signup',
+        element: <SignUp></SignUp>
       },
       {
-        path:'/login',
-        element:<Login></Login> 
+        path: '/login',
+        element: <Login></Login>
       },
 
       // Footer//
 
       {
-        path:'/aboutus',
-        element:<AboutUs></AboutUs> 
+        path: '/aboutus',
+        element: <AboutUs></AboutUs>
       },
     ]
   },
@@ -73,7 +80,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   
+
     <Authinction>
       <RouterProvider router={router} />
     </Authinction>

@@ -1,27 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Showcamp from "./Showcamp";
 
  
 
 const AvailableCamp = () => {
+    const [post,setpost]=useState()
+    useEffect(() =>{
+        fetch('http://localhost:5000/post')
+        .then(res => res.json())
+        .then(data =>{
+            setpost(data);
+            console.log(data);
+        })
+    },[])
     return (
         <div>
-             <div className="flex-none">
-            <ul className="menu menu-horizontal px-1">
-                 
-                <li>
-                    <details>
-                        <summary className="text-lg font-semibold ">
-                        Available Camp
-                        </summary>
-                        <ul className="p-2 bg-base-100">
-                           <Link to='/participant'><li><a> Participant</a></li></Link> 
-                            <li><a>HealthCare Professionals</a></li>
-                            <li><a> Organizer</a></li>
-                        </ul>
-                    </details>
-                </li>
-            </ul>
-        </div>
+            <div className="grid grid-cols-3">
+                {
+                    post?.map(data => <Showcamp key={data._id} data={data}></Showcamp> )
+                }
+            </div>
         </div>
     );
 };
