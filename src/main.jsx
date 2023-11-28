@@ -20,6 +20,8 @@ import Dashboard from './AllComponent/Root/Navbar/Navbar/Dashboard/Dashboard';
 import AddCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/AddCamp/AddCamp';
 import Detials from './AllComponent/Root/Navbar/Navbar/AvailableCamp/DEtials/Detials';
 import ManageRequest from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageRequest/ManageRequest';
+import DeleteData from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageRequest/DeleteData/DeleteData';
+import MangeCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/MangeCamp';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
         element: <AddCamp></AddCamp>
       },
       {
+        path: '/managecamp',
+        element: <MangeCamp></MangeCamp>
+      },
+      {
         path: '/request',
         element: <ManageRequest></ManageRequest>
       },
@@ -59,6 +65,12 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/post')
 
       },
+      // {
+      //   path: '/delete/:id',
+      //   element:<DeleteData></DeleteData>,
+      //   loader: () => fetch('http://localhost:5000/add')
+
+      // },
       {
         path: '/contact',
         element: <Contact></Contact>

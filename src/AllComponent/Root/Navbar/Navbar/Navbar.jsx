@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthConnect } from "../../Authinction/Authinction";
 import swal from "sweetalert";
 import img from './../../../../assets/Images/icon user.jpg'
-import AvailableCamp from "./AvailableCamp/AvailableCamp";
+import { FaHome } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -21,7 +21,11 @@ const Navbar = () => {
             })
     }
     const Navlink = <>
-        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">Home</NavLink></li>
+        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">
+            {
+                <FaHome></FaHome>
+            }
+            Home</NavLink></li>
         <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
      
         <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
@@ -80,7 +84,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="  btn-ghost text-3xl"><span className="text-5xl font-serif text-red-400">H</span>ealh<span className="text-4xl font-serif text-emerald-300">A</span>ven Camps</a>
+                    <a className="  btn-ghost text-3xl"><span className="text-5xl font-serif text-red-400">M</span>edi <span className="text-4xl font-serif text-emerald-300 ">C</span><span className="text-red-40">amp</span> <span className="text-3xl absolute right-top-2 text-blue-700 font-bold font-serif">+</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

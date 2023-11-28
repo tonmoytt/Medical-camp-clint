@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import swal from "sweetalert";
 
 // eslint-disable-next-line react/prop-types
 const Showmanagedata = ({ data }) => {
@@ -6,8 +7,43 @@ const Showmanagedata = ({ data }) => {
     const { name, _id, age, gender, address } = data;
 
 
-    const hendeladd=() =>{
-        fetch('')
+    const hendeladd = () => {
+        fetch('http://localhost:5000/add', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                swal("Success!", "  Successfully added", "success");
+            })
+    }
+
+
+    //  deleted//
+
+    const handleDeleteClick = (id) => {
+        console.log(id);
+        const procesd = confirm('are you sure?')
+        if (procesd)
+            console.log('yes ok');
+        fetch(`http://localhost:5000/add/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(datas => {
+                console.log(datas);
+                if (datas.deletedCount > 0) {
+                    alert('deleted succfull')
+
+                    // deleted hoy na kno?
+                    // const remining = data.filter(datas => datas._id !== id)
+                    // setdataloder(remining);
+                }
+            })
     }
     return (
         <div>
@@ -34,13 +70,13 @@ const Showmanagedata = ({ data }) => {
 
                             <div className="pl-4 justify-between flex">
 
-                            <Link to={`/addeddeshboard/${_id}`}><button onClick={hendeladd} className="mr-4 btn btn-outline btn-success ">Add</button></Link>
+                                <Link to={`/addeddeshboard/${_id}`}><button onClick={hendeladd} className="mr-4 btn btn-outline btn-success ">Add</button></Link>
 
-                            <Link><button className="mr-4 btn btn-outline btn-error ">Delete</button></Link>
+                                <Link  ><button onClick={() => handleDeleteClick(_id)} className="mr-4 btn btn-outline btn-error ">Delete</button></Link>
                             </div>
-                            
+
                         </tr>
-                         
+
                     </tbody>
                 </table>
             </div>

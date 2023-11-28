@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthConnect } from "../Authinction";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 
 const SignUp = () => {
     const [password, setpassword] = useState('')
-    const { CreateUser,createGoogle,Updateuser } = useContext(AuthConnect)
+    const { CreateUser, createGoogle, Updateuser } = useContext(AuthConnect)
+
+    const Navigate = useNavigate()
     const HendelSignUp = event => {
         event.preventDefault()
         const form = event.target;
@@ -16,6 +18,7 @@ const SignUp = () => {
         const password = form.password.value
         const user = { photo, name, email, password }
         console.log(user);
+
 
 
         setpassword('')
@@ -40,33 +43,55 @@ const SignUp = () => {
         CreateUser(email, password)
             .then(result => {
                 console.log(result.user);
-                Updateuser(name,photo)
-                .then(result =>{
-                    console.log(result.user);
-                    
+
+                // send user information to database//
+                fetch('http://localhost:5000/signup', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body:JSON.stringify(user)
                 })
-                .catch(error =>{
-                    console.error(error);
-                     
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+
+
+
+                Updateuser(name, photo)
+                    .then(result => {
+                        console.log(result.user);
+
+                    })
+                    .catch(error => {
+                        console.error(error);
+
+                    })
                 swal("Success!", "Registered Successfully", "success");
                 event.target.reset()
+                Navigate('/login')
+                
             })
             .catch(error => {
                 console.error(error);
                 swal("error!", "check, and try again!", "error");
             })
     }
+
+
+
+
     const GoogleHendel = () => {
         console.log('clicked');
         createGoogle()
-        .then(result =>{
-            console.log(result.user);
-            swal("Success!", "Google Registertion Successfully", "success");
-        })
-        .catch(error =>{
-            console.error(error);
-        })
+            .then(result => {
+                console.log(result.user);
+                swal("Success!", "Google Registertion Successfully", "success");
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -113,7 +138,7 @@ const SignUp = () => {
                     <div className="px-4 pb-4">
                         <button onClick={GoogleHendel} className="w-full btn btn-secondary mt-4 ">Login in with Google</button>
                     </div>
-                    
+
                 </div>
                 <div className='bg-red-200 rounded-base'>
                     {
