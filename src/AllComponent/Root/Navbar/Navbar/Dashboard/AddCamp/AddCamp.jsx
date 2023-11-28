@@ -34,7 +34,7 @@ const AddCamp = () => {
             })
     }
     return (
-        <div>
+        <div className="bg-red-200">
             <div className="fixed">
                 <Dashboard></Dashboard>
             </div>

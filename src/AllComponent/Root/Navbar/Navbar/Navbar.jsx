@@ -84,7 +84,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="  btn-ghost text-3xl"><span className="text-5xl font-serif text-red-400">M</span>edi <span className="text-4xl font-serif text-emerald-300 ">C</span><span className="text-red-40">amp</span> <span className="text-3xl absolute right-top-2 text-blue-700 font-bold font-serif">+</span></a>
+                    <a className="  btn-ghost text-3xl ml-4"><span className="text-5xl font-serif text-red-400">M</span>edi <span className="text-4xl font-serif text-emerald-300 ">C</span><span className="text-red-40">amp</span> <span className="text-3xl absolute right-top-2 text-blue-700 font-bold font-serif">+</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

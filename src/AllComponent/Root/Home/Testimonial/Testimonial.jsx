@@ -26,8 +26,8 @@ const Testimonial = () => {
 
     }, [])
     return (
-        <div>
-            <p className="font-bold text-3xl text-center">Our Customers review</p>
+        <div className="bg-slate-600 pt-6">
+            <p className="font-bold text-3xl  text-center">Our Customers review</p>
 
             <div className="border-3">
 

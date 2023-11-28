@@ -6,7 +6,7 @@ const Showcamp = ({data}) => {
     // eslint-disable-next-line react/prop-types
     const { _id, name, photo, fees, location, date } = data;
     return (
-        <div className="card w-96 p-4 bg-fuchsia-200 shadow-xl">
+        <div className="card w-96 p-4 bg-slate-800 shadow-xl">
             <figure>
                 <img src={photo} alt={name} />
             </figure>

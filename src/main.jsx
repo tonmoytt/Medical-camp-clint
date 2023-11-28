@@ -22,6 +22,7 @@ import Detials from './AllComponent/Root/Navbar/Navbar/AvailableCamp/DEtials/Det
 import ManageRequest from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageRequest/ManageRequest';
 import DeleteData from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageRequest/DeleteData/DeleteData';
 import MangeCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/MangeCamp';
+import Update from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/Update/Update';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,12 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/post')
 
       },
+      {
+        path: '/update/:id',
+        element:  <Update></Update> ,
+        loader: ({params}) => fetch(`http://localhost:5000/join/${params.id}`)
+
+      },
       // {
       //   path: '/delete/:id',
       //   element:<DeleteData></DeleteData>,
@@ -99,7 +106,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     <Authinction>
-      <div className='text-white bg-slate-900'>
+      <div className='text-white bg-slate-900 rounded-xl m-2'>
       <RouterProvider router={router} />
       </div>
      

@@ -46,12 +46,12 @@ const Showmanagedata = ({ data }) => {
             })
     }
     return (
-        <div>
+        <div className="bg-">
             <div className="overflow-x-auto">
                 <table className="table border-8">
                     {/* head */}
                     <thead>
-                        <tr className="font-mono text-xl font-bold">
+                        <tr className="font-mono bg-white text-xl font-bold">
                             <th></th>
                             <th>Name</th>
                             <th>Age</th>

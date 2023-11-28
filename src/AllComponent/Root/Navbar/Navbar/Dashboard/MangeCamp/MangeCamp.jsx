@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import Dashboard from "../Dashboard";
+import { Link } from "react-router-dom";
 
 
 const MangeCamp = () => {
@@ -11,12 +12,12 @@ const MangeCamp = () => {
             .then(res => res.json())
             .then(data => {
                 setdata(data);
-                console.log(data);
+                // console.log(data);
             })
 
     }, [])
     return (
-        <div>
+        <div className="bg-slate-400 ">
             <div className="fixed">
                 <Dashboard></Dashboard>
             </div>
@@ -26,11 +27,11 @@ const MangeCamp = () => {
                 {
                     data?.map(data => <div key={data._id}>
 
-                        <div className="overflow-x-auto">
-                            <table className="table border-8">
+                        <div className="overflow-x-auto bg-purple-200">
+                            <table className="table border-8 mt-8 text-red-400 bg-slate-700 ">
                                 {/* head */}
                                 <thead>
-                                    <tr className="font-mono text-xl font-bold">
+                                    <tr className="font-mono  bg-white text-xl font-bold">
                                         <th></th>
                                         <th>Name</th>
                                         <th>Age</th>
@@ -51,9 +52,22 @@ const MangeCamp = () => {
                                         <td> {data.healthInfo}</td>
                                         <td> {data.phoneNumber}</td>
 
+
+                                        <div className="pl-4 bg-white justify-between flex">
+
+                                            <Link to={`/update/${data._id}`}>
+                                                <button   className="mr-4 btn btn-outline btn-success ">Update</button>
+                                            </Link>
+
+                                            <Link  >
+                                                <button   className="mr-4 btn btn-outline btn-error ">Delete</button>
+                                            </Link>
+                                        </div>
                                     </tr>
 
+
                                 </tbody>
+
                             </table>
                         </div>
                     </div>)

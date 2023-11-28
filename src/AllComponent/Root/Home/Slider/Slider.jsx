@@ -15,12 +15,12 @@ import img6 from './../../../../assets/Images/success6.jpg'
 
 const Slider = () => {
     return (
-      <div className='mt-6' >
+      <div className='mt-6 pt-6 pb-4 bg-fuchsia-50' >
         <hr />
         <div>
 
       
-        <p className='my-6 text-center text-4xl font-bold'>Our successive moment</p>
+        <p className='my-6 text-center text-slate-800 text-4xl font-bold'>Our successive moment</p>
         <Swiper
         slidesPerView={4}
         centeredSlides={true}

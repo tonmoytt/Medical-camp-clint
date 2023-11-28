@@ -54,7 +54,7 @@ const Detials = () => {
     }
 
     return (
-        <div className="mt-20 pl-2 md:pl-96 mx-auto">
+        <div className="mt-20 pl-2 md:pl-96 mx-auto text-black">
             <h1 className="text-4xl text-rose-400 pb-4 ml-12">Full Details Available Here</h1>
             <div className="w-96 ml-16 mb-10">
                 <hr />
@@ -100,7 +100,7 @@ const Detials = () => {
                     {/* Open the modal using document.getElementById('ID').showModal() method */}
                     <button className="btn btn-primary uppercase w-full " onClick={() => document.getElementById('my_modal_1').showModal()}>Join</button>
                     <dialog id="my_modal_1" className="modal">
-                        <div className="modal-box">
+                        <div className="modal-box text-black">
                             <h3 className="font-bold mb-3 text-lg">Fill Up The Join Camp Form!</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <input

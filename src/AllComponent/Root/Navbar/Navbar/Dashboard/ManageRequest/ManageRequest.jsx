@@ -15,7 +15,7 @@ const ManageRequest = () => {
 
     }, [])
     return (
-        <div>
+        <div className="bg-slate-300">
             <div className="fixed">
                 <Dashboard></Dashboard>
             </div>
