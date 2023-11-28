@@ -1,8 +1,10 @@
 import swal from "sweetalert";
 import Dashboard from "../Dashboard";
+import {  useNavigate } from "react-router-dom";
 
 
 const AddCamp = () => {
+    const Navigate=useNavigate()
     const hendeladdcamp = event => {
         event.preventDefault()
         const form = event.target
@@ -27,7 +29,8 @@ const AddCamp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                swal("Success!", "Camp created", "success");
+                swal("Successfully!", "Camp created", "success");
+                Navigate('/camp')
             })
     }
     return (

@@ -15,7 +15,7 @@ import img5 from './../../../../assets/Images/benner4.jpg'
 const Carosole = () => {
     return (
         <div className="px-8 py-8 bg-teal-50">
-            <div className="px-8 py-8 bg-amber-100">
+            <div className="px-8 py-8 bg-sky-100">
 
 
                 <Carousel  >

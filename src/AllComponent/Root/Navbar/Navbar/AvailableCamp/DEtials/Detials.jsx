@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { FaBackward } from "react-icons/fa";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
+
 
 // (data.modifiedCount>0)
 // (data.deletedCount === 1)
 const Detials = () => {
+    // const Navigate=useNavigate()
     const [data, setdata] = useState([])
     const { id } = useParams()
     console.log(id);
@@ -43,9 +46,9 @@ const Detials = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedIdCount  > 0) {
-                    swal("Success!", "  Successfully added", "success");
-                }
+                swal("Success!","successfuly request check menege request list", "success")
+                // Navigate('/request')
+
 
             })
     }
@@ -64,6 +67,23 @@ const Detials = () => {
                 <figure className="px-10 pt-10">
                     <img src={data.photo} alt="Shoes" className="rounded-xl w-full" />
                 </figure>
+                <button className="absolute right-4 mt-2">
+                    <Link to='/camp'>
+                        <div className="flex items-center">
+                            {
+                                <FaBackward></FaBackward>
+                            }
+
+                            <div className=" text-lg ml-2 text-red-500">
+                                Back
+                            </div>
+                        </div>
+
+                    </Link>
+
+
+
+                </button>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title"> {data.name}</h2>
                     <p>Specialist Provider : {data.provider}</p>

@@ -99,7 +99,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     <Authinction>
+      <div className='text-white bg-slate-900'>
       <RouterProvider router={router} />
+      </div>
+     
     </Authinction>
   </React.StrictMode>,
 )

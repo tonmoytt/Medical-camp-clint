@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="bg-slate-100 mt-10 px-16">
+        <div className="bg-slate-100 text-slate-800 mt-10 px-16">
             <div className="justify-between border-b-4 flex py-20 items-center ">
 
                 <div className="mt-4">

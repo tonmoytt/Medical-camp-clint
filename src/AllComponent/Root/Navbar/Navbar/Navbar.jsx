@@ -26,7 +26,7 @@ const Navbar = () => {
                 <FaHome></FaHome>
             }
             Home</NavLink></li>
-        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
+        <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
      
         <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
         <li className="text-lg font-semibold   hover:text-cyan-400"> <NavLink to="/contact">Contact Us</NavLink></li>
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <hr />
                 <hr />
             </div>
-            <div className="navbar items-center bg-base-100">
+            <div className="navbar items-center text-white bg-slate-800">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

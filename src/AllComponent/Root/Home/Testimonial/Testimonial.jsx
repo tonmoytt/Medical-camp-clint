@@ -21,7 +21,7 @@ const Testimonial = () => {
             .then(res => res.json())
             .then(data => {
                 setrating(data);
-                console.log(data);
+                // console.log(data);
             })
 
     }, [])

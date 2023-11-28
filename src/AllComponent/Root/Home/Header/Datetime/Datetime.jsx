@@ -2,7 +2,7 @@ import moment from 'moment';
  
 const Datetime = () => {
     return (
-        <div className='navbar bg-slate-50  mb-4  mt-2  justify-between'>
+        <div className='navbar bg-slate-50 text-slate-600  mb-4  mt-2  justify-between'>
             < p className=' text-xl'>{moment().format("dddd, MMMM Do YYYY, ")}</p>
 
           

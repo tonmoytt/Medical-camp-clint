@@ -5,14 +5,14 @@ import { FaFacebook,FaTwitter,FaGoogle,FaPinterest,FaInstagram } from "react-ico
 
 const Header = () => {
     return (
-        <div className="bg-red-300 p-4 items-center grid md:grid-cols-3  ">
+        <div className="bg-violet-200 p-4 items-start grid md:grid-cols-3  ">
        <div>
         <img className='h-20 w-20   text-center rounded-full' src= {img} alt="" />
         </div>  
                 <div className='   '>
-                <h1 className="text-center py-2 text-xl text-white font-serif">Take one option,make life esey <span><button className="text-xl rounded-xl bg-red-400 p-2">Learn more</button></span></h1>
+                <h1 className="text-center py-2 text-xl text-black font-serif">Take one option,make life esey <span><button className="text-xl rounded-xl bg-red-400 p-2 text-white ml-2">Learn more</button></span></h1>
                 </div>
-                <div className='flex gap-4  ml-20 items-center '>
+                <div className='flex gap-4 mt-5 text-slate-800 ml-6 md:ml-28 items-center '>
                     <div className='flex gap-4 pl-8'>
                         {
                             <FaFacebook></FaFacebook>
@@ -31,7 +31,7 @@ const Header = () => {
                             <FaInstagram></FaInstagram>
                         }
                     </div>
-                    <div className='border-x-2'>
+                    <div className='border-x-4 '>
                     <Link className=' hover:btn btn-outline px-2 uppercase font-serif' to="/contact"> Contact Us</Link>
                     </div>
                     
