@@ -4,11 +4,11 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import img from './../../../../assets/Images/success7.jpg'
-import img2 from './../../../../assets/Images/success8.jpg'
-import img3 from './../../../../assets/Images/success3.jpg'
-import img4 from './../../../../assets/Images/success4.jpg'
-import img5 from './../../../../assets/Images/success5.jpg'
+import img from './../../../../assets/Images/benner2.jpg'
+import img2 from './../../../../assets/Images/banner1.jpg'
+import img3 from './../../../../assets/Images/mainbenner.jpg'
+import img4 from './../../../../assets/Images/banner3.jpg'
+import img5 from './../../../../assets/Images/benner4.jpg'
 import img6 from './../../../../assets/Images/success6.jpg'
  
 

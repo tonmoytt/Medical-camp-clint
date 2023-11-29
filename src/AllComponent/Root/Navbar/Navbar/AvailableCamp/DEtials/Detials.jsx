@@ -34,7 +34,7 @@ const Detials = () => {
         const user = { name, phoneNumber, age, gender, address, healthInfo }
         console.log(user);
 
-        fetch('http://localhost:5000/join', {
+        fetch('https://medical-camp-server-mu.vercel.app/join', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,8 +55,8 @@ const Detials = () => {
 
     return (
         <div className="mt-20 pl-2 md:pl-96 mx-auto text-black">
-            <h1 className="text-4xl text-rose-400 pb-4 ml-12">Full Details Available Here</h1>
-            <div className="w-96 ml-16 mb-10">
+            <h1 className="text-4xl text-rose-400 pb-4 ml-4">Full Details Available Here</h1>
+            <div className="w-96 ml-6 mb-10">
                 <hr />
                 <hr />
                 <hr />

@@ -45,7 +45,7 @@ const SignUp = () => {
                 console.log(result.user);
 
                 // send user information to database//
-                fetch('http://localhost:5000/signup', {
+                fetch('https://medical-camp-server-mu.vercel.app/signup', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

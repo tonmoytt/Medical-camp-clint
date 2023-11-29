@@ -1,33 +1,46 @@
 import { useEffect, useState } from "react";
 import Dashboard from "../Dashboard";
 import Showmanagedata from "./Showmanagedata";
+import useAxiosPublic from "../../../../../../Hooks/usehaxiospublick";
+import { useQuery } from "@tanstack/react-query";
 
 
 
 const ManageRequest = () => {
-    const [data, setdata] = useState()
-    useEffect(() => {
-        fetch('http://localhost:5000/join')
-            .then(res => res.json())
-            .then(data => {
-                setdata(data);
-            })
+    // const [data, setdata] = useState()
+    // useEffect(() => {
+    //     fetch('https://medical-camp-server-mu.vercel.app/join')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setdata(data);
+    //         })
 
-    }, [])
+    // }, [])
+    const axiosPublic = useAxiosPublic()
+    const { data: joins = [],refetch} = useQuery({
+        queryKey: ["join"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/join");
+            return res.data;
+        },
+    });
+    console.log(joins);
+
     return (
-        <div className="bg-slate-300">
-            <div className="fixed">
-                <Dashboard></Dashboard>
-            </div>
-            <div>
-                <p className="uppercase text-3xl font-semibold mb-10 mt-6 text-center underline">Manage Camping</p>
+        <div className="bg-blue-300 mt-3">
+            <p className="uppercase text-3xl  font-semibold mb-10 mt-6 text-center underline">Manage Camping</p>
+            <div className="bg-slate-400 flex">
+                <div className="">
+                    <Dashboard></Dashboard>
+                </div>
 
-            </div>
 
-            <div className="ml-72 mr-6">
-                {
-                    data?.map(data => <Showmanagedata key={data._id} data={data}></Showmanagedata>)
-                }
+                <div className=" mr-6">
+
+                    {
+                        joins?.map(data => <Showmanagedata key={data._id} data={data} refetch={refetch}></Showmanagedata>)
+                    }
+                </div>
             </div>
         </div>
     );

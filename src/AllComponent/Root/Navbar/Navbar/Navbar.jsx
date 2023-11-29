@@ -21,22 +21,22 @@ const Navbar = () => {
             })
     }
     const Navlink = <>
-        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">
+        <li className="text-base font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">
             {
                 <FaHome></FaHome>
             }
             Home</NavLink></li>
-        <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
+        <li className="text-base font-semibold  hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
      
-        <li className="text-lg font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
-        <li className="text-lg font-semibold   hover:text-cyan-400"> <NavLink to="/contact">Contact Us</NavLink></li>
+        <li className="text-l font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
+        <li className="text-base font-semibold   hover:text-cyan-400"> <NavLink to="/contact">Contact Us</NavLink></li>
         {
             user ? <>
                 <div className="flex gap-2">
                      
                         {/* <p className="mr-2 font-bold">{user?.displayName}</p> */}
 
-                        <div className="flex items-center ml-60 mr-10">
+                        <div className="flex items-center ml-40 mr-10">
                             <img className="h-10 w-10 mr-2 rounded-full" src={user?.photoURL} alt="" />
                             <Link className="btn btn-outline btn-secondary" to='/signup'> <button onClick={hendelsignout}>Signout</button></Link>
                         </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 :
                 <>
                     <div className="flex">
-                        <li className="text-lg font-semibold font-serif hover:text-cyan-400"> <NavLink to="/login">Login</NavLink></li>
+                        <li className="text-base font-semibold font-serif hover:text-cyan-400"> <NavLink to="/login">Login</NavLink></li>
 
                         <div className="flex items-center ml-60 mr-10">
                             <img className="h-10 w-10 mr-2 rounded-full" src={img} alt="" />
@@ -78,7 +78,7 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu md:ml-32 menu-sm dropdown-content mt-3 z-[1] p-2 shadow  text-black rounded-box w-52">
                             {
                                 Navlink
                             }

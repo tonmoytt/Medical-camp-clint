@@ -1,10 +1,13 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import img from './../../../../assets/Images/benner2.jpg'
-import img2 from './../../../../assets/Images/banner1.jpg'
-import img3 from './../../../../assets/Images/mainbenner.jpg'
-import img4 from './../../../../assets/Images/banner3.jpg'
-import img5 from './../../../../assets/Images/benner4.jpg'
+
+
+import img from './../../../../assets/Images/success7.jpg'
+import img2 from './../../../../assets/Images/success8.jpg'
+import img3 from './../../../../assets/Images/success3.jpg'
+import img4 from './../../../../assets/Images/success4.jpg'
+import img5 from './../../../../assets/Images/success5.jpg'
+ 
 
 
 
@@ -25,11 +28,11 @@ const Carosole = () => {
                     </div>
                     <div>
                         <img src={img2} />
-                        <p className="legend">LAB ReSearch</p>
+                        <p className="legend">Operation</p>
                     </div>
                     <div>
                         <img src={img3} />
-                        <p className="legend">HealthCare</p>
+                        <p className="legend"> Free Checkup</p>
                     </div>
                     <div>
                         <img src={img4} />

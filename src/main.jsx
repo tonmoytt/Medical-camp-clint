@@ -23,6 +23,7 @@ import ManageRequest from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageReq
 import DeleteData from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageRequest/DeleteData/DeleteData';
 import MangeCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/MangeCamp';
 import Update from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/Update/Update';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       // dashboard//
       {
         path: '/dashboard',
-        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute> 
+        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
       },
       {
         path: '/addcamp',
@@ -62,20 +63,26 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <PrivetRoute><Detials></Detials></PrivetRoute> ,
-        loader: () => fetch('http://localhost:5000/post')
+        element: <PrivetRoute><Detials></Detials></PrivetRoute>,
+        loader: () => fetch('https://medical-camp-server-mu.vercel.app/post')
+
+      },
+      {
+        path: '/postdetails/:id',
+        element: <PrivetRoute><Detials></Detials></PrivetRoute>,
+        loader: () => fetch('https://medical-camp-server-mu.vercel.app/post')
 
       },
       {
         path: '/update/:id',
-        element:  <Update></Update> ,
-        loader: ({params}) => fetch(`http://localhost:5000/join/${params.id}`)
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`https://medical-camp-server-mu.vercel.app/join/${params.id}`)
 
       },
       // {
       //   path: '/delete/:id',
       //   element:<DeleteData></DeleteData>,
-      //   loader: () => fetch('http://localhost:5000/add')
+      //   loader: () => fetch('https://medical-camp-server-mu.vercel.app/add')
 
       // },
       {
@@ -102,14 +109,15 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-    <Authinction>
-      <div className='text-white bg-slate-900 rounded-xl m-2'>
-      <RouterProvider router={router} />
-      </div>
-     
-    </Authinction>
+    <QueryClientProvider client={queryClient}>
+      <Authinction>
+        <div className='text-white bg-slate-900 rounded-xl m-2'>
+          <RouterProvider router={router} />
+        </div>
+      </Authinction>
+    </QueryClientProvider>
   </React.StrictMode>,
 )
