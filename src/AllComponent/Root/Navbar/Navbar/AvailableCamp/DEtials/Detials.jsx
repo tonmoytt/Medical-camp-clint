@@ -57,15 +57,15 @@ const Detials = () => {
     return (
         <div className="mt-20 pl-2 md:pl-96 mx-auto text-black">
             <h1 className="text-4xl text-rose-400 pb-4 ml-4">Full Details Available Here</h1>
-            <div className="w-96 ml-6 mb-10">
+            <div className="w-64 md:w-96 ml-6 mb-10">
                 <hr />
                 <hr />
                 <hr />
                 <hr />
                 <hr />
             </div>
-            <div className="card w-1/2 text-center bg-orange-100 shadow-xl">
-                <figure className="px-10 pt-10">
+            <div className="card w-full md:w-1/2 text-center bg-orange-100 shadow-xl">
+                <figure className="px-4 md:px-10 pt-10">
                     <img src={data.photo} alt="Shoes" className="rounded-xl w-full" />
                 </figure>
                 <button className="absolute right-4 mt-2">
