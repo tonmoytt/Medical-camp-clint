@@ -7,7 +7,7 @@ import swal from "sweetalert";
 const Update = () => {
     const loderData = useLoaderData()
     console.log(loderData);
-    const Navigate=useNavigate()
+    const Navigate = useNavigate()
     // const { name, _id, phoneNumber,healthInfo,age,gender,address } = loderData;
 
     const handleUpdate = event => {
@@ -23,7 +23,7 @@ const Update = () => {
         console.log(user);
 
 
-        fetch(`https://medical-camp-server-mu.vercel.app/join/${loderData._id}`, {
+        fetch(`https://medical-camp-server-mu.vercel.app/join/${loderData?._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -34,32 +34,33 @@ const Update = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    swal(" Update Successfully & add again update data")
+                    swal(" Update Successfully & first delete old and  add updated data")
                     Navigate('/request')
-                    
                 }
-            }).catch(err => console.log(err))
+            })
+            .catch(error => console.error(error))
     }
 
 
 
     return (
 
-        <div className="text-black">
+        <div className="text-black flex">
 
-            <div className="fixed">
+            <div className="">
                 <Dashboard></Dashboard>
             </div>
-            <div>
+
+
+
+
+
+            <div className="ml-6 mr-6 md:mx-10">
                 <p className="uppercase text-3xl text-white font-semibold mb-10 mt-6 text-center underline">Update From</p>
-            </div>
-
-
-            <div className="ml-72 mr-6 mx-10">
                 <form onSubmit={handleUpdate} className="space-y-4">
                     <input
                         name="name"
-                        className="border px-1 py-2 rounded w-full"
+                        className="border px-1 py-2 md:pr-48 rounded w-full"
                         type="text"
                         placeholder="Name"
                         defaultValue={loderData?.name}

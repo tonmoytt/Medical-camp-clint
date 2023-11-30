@@ -98,7 +98,7 @@ const AddCamp = () => {
                                         <label className="label">
                                             <span className="label-text">Photo URL</span>
                                         </label>
-                                        <input type="file" name="photo" placeholder="Photo URL" className="file-input file-input-bordered w-full max-w-xs" required />
+                                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
 
                                     </div>
                                     <div className="form-control w-1/2">

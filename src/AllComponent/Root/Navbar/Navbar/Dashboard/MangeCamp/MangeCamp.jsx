@@ -89,7 +89,7 @@ const MangeCamp = () => {
                                             <td> {data.phoneNumber}</td>
 
 
-                                            <div className="pl-4 justify-between flex">
+                                            <div className="pl-4 mt-4 justify-between flex">
 
                                                 <Link to={`/update/${data._id}`}>
                                                     <button className="mr-4 btn btn-outline btn-success ">Update</button>
