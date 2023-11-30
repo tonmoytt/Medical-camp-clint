@@ -1,3 +1,4 @@
+import Footer from "../../Footer/Footer";
 
 
 const Contact = () => {
@@ -21,40 +22,40 @@ const Contact = () => {
 
                 <h1>
                     <p>
-                       <p className="font-bold text-lg my-6">General Contact Information:</p> 
+                        <p className="font-bold text-lg my-6">General Contact Information:</p>
 
-                       <p className="font-bold text-lg ">Physical Address:</p> 
+                        <p className="font-bold text-lg ">Physical Address:</p>
                         123 Health Plaza
                         Cityville, State 12345
                         United States
 
-                       <p className="font-bold text-lg mt-6">Phone Number:</p> 
+                        <p className="font-bold text-lg mt-6">Phone Number:</p>
                         Main Office: (555) 123-4567
                         Medical Camp Inquiries: (555) 987-6543
 
-                        <p className="font-bold text-lg mt-6">Email Addresses:</p>  
+                        <p className="font-bold text-lg mt-6">Email Addresses:</p>
 
                         General Inquiries: info@medicalcampmanagement.org
                         Partnership Opportunities: partnerships@medicalcampmanagement.org
                         Volunteer Coordination: volunteers@medicalcampmanagement.org
-                        <p className="font-bold text-lg mt-6">Social Media:</p>  
+                        <p className="font-bold text-lg mt-6">Social Media:</p>
                         Connect with us on social media for the latest updates and news about our medical camps.
 
-                     <li>Facebook</li>   
-                      <li>Twitter</li>  
-                      <li>Instagram</li>   
-                        
-                        <p className="font-bold text-lg mt-6">Office Hours:</p>   
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+
+                        <p className="font-bold text-lg mt-6">Office Hours:</p>
                         Monday to Friday: 9:00 AM - 5:00 PM
                         (Closed on weekends and public holidays)
 
-                        <p className="font-bold text-lg mt-6">Map and Directions:</p> 
+                        <p className="font-bold text-lg mt-6">Map and Directions:</p>
                         [Embed Google Map or provide clear directions]
 
-                        <p className="font-bold text-lg mt-6">Emergency Contacts:</p>    
+                        <p className="font-bold text-lg mt-6">Emergency Contacts:</p>
                         In case of urgent matters related to ongoing medical camps or immediate assistance, please contact our emergency hotline: (555) 789-0123.
 
-                        <p className="font-bold text-lg mt-6">Suggestions:</p>  Feedback and 
+                        <p className="font-bold text-lg mt-6">Suggestions:</p>  Feedback and
                         We value your feedback and suggestions. Share your thoughts with us by emailing feedback@medicalcampmanagement.org or using the contact form above.
 
                         <p className="font-bold text-lg mt-6">Partnership </p>  Opportunities:
@@ -66,7 +67,9 @@ const Contact = () => {
                     </p>
                 </h1>
             </div>
-
+            <div>
+                <Footer></Footer>
+            </div>
 
         </div>
     );

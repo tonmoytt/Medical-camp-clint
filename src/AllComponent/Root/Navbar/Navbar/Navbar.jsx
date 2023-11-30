@@ -67,7 +67,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="mt-2">
+        <div className="mb-2">
             <div>
                 <hr />
                 <hr />

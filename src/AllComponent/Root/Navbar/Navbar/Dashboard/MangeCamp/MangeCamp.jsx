@@ -32,7 +32,7 @@ const MangeCamp = () => {
     //             if (datas.deletedCount > 0) {
     //                 swal("Success!", "  Delete Successful  ", "success");
 
-                     
+
     //             }
     //         })
     // }
@@ -56,9 +56,7 @@ const MangeCamp = () => {
                                     {/* head */}
                                     <thead>
                                         <tr className="font-mono  bg-white text-xl font-bold">
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
+                                            
                                             <th></th>
                                             <th></th>
                                             <th></th>
@@ -70,20 +68,15 @@ const MangeCamp = () => {
                                             <th>HealthInfo</th>
                                             <th>Number </th>
                                             <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                            <th> </th>
-                                             
+                                            
+                                            
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {/* row 1 */}
                                         <tr>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
+                                           
                                             <th></th>
                                             <th></th>
                                             <th></th>

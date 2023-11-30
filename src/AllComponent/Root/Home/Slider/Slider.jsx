@@ -20,7 +20,7 @@ const Slider = () => {
         <div>
 
       
-        <p className='my-6 text-center text-slate-800 text-4xl font-bold'>Our successive moment</p>
+        <p className='my-6 text-center text-slate-800 text-4xl font-bold'>Our successive camp</p>
         <Swiper
         slidesPerView={4}
         centeredSlides={true}

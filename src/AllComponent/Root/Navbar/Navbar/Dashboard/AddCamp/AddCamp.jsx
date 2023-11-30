@@ -37,13 +37,13 @@ const AddCamp = () => {
         <div>
 
             <div className="bg-red-200 flex justify-between ">
-                <div className="">
+                <div className="bg-gray-400">
                     <Dashboard></Dashboard>
                 </div>
 
 
-                <div>
-                    <p className="uppercase text-3xl font-semibold mb-10 mt-6 md:pr-80 text-center underline">add a camp</p>
+                <div className="border-l-4 md:pl-40">
+                    <p className="uppercase text-3xl font-semibold mb-10 mt-6 md:pr-96 text-center underline">add a camp</p>
                     <div className="md:mr-96 ">
                         <div className="gap-10">
                             <form onSubmit={hendeladdcamp} className="text-black">
@@ -53,7 +53,7 @@ const AddCamp = () => {
                                         <label className="label">
                                             <span className="label-text">Camp name</span>
                                         </label>
-                                        <input type="type" name="name" placeholder=" Name" className="input input-bordered md:pr-72" required />
+                                        <input type="type" name="name" placeholder=" Name" className="input input-bordered md:pr-40" required />
                                     </div>
                                     <div className="form-control w-1/2">
                                         <label className="label">
@@ -98,7 +98,8 @@ const AddCamp = () => {
                                         <label className="label">
                                             <span className="label-text">Photo URL</span>
                                         </label>
-                                        <input type="photo" name="photo" placeholder="Photo URL" className="input input-bordered" required />
+                                        <input type="file" name="photo" placeholder="Photo URL" className="file-input file-input-bordered w-full max-w-xs" required />
+
                                     </div>
                                     <div className="form-control w-1/2">
                                         <label className="label">

@@ -10,7 +10,10 @@ const POst = () => {
     useEffect(() =>{
         fetch('https://medical-camp-server-mu.vercel.app/post')
         .then(res => res.json())
-        .then(data => setPost(data))
+        .then(data =>  {
+            const Postdata =data.slice(0,6)
+            setPost(Postdata)
+        })
         
         // const sortedBlogs = post.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt));
         // setPost(sortedBlogs);

@@ -24,6 +24,7 @@ import DeleteData from './AllComponent/Root/Navbar/Navbar/Dashboard/ManageReques
 import MangeCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/MangeCamp';
 import Update from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/Update/Update';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import OrganizerProfile from './AllComponent/Root/Navbar/Navbar/Dashboard/OrganizerProfile/OrganizerProfile';
 
 const router = createBrowserRouter([
   {
@@ -40,51 +41,10 @@ const router = createBrowserRouter([
         path: '/camp',
         element: <PrivetRoute><AvailableCamp></AvailableCamp></PrivetRoute>
       },
-      {
-        path: '/participant',
-        element: <Priticipant></Priticipant>
-      },
+
       // dashboard//
-      {
-        path: '/dashboard',
-        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
-      },
-      {
-        path: '/addcamp',
-        element: <AddCamp></AddCamp>
-      },
-      {
-        path: '/managecamp',
-        element: <MangeCamp></MangeCamp>
-      },
-      {
-        path: '/request',
-        element: <ManageRequest></ManageRequest>
-      },
-      {
-        path: '/details/:id',
-        element: <PrivetRoute><Detials></Detials></PrivetRoute>,
-        loader: () => fetch('https://medical-camp-server-mu.vercel.app/post')
 
-      },
-      {
-        path: '/postdetails/:id',
-        element: <PrivetRoute><Detials></Detials></PrivetRoute>,
-        loader: () => fetch('https://medical-camp-server-mu.vercel.app/post')
 
-      },
-      {
-        path: '/update/:id',
-        element: <Update></Update>,
-        loader: ({ params }) => fetch(`https://medical-camp-server-mu.vercel.app/join/${params.id}`)
-
-      },
-      // {
-      //   path: '/delete/:id',
-      //   element:<DeleteData></DeleteData>,
-      //   loader: () => fetch('https://medical-camp-server-mu.vercel.app/add')
-
-      // },
       {
         path: '/contact',
         element: <Contact></Contact>
@@ -105,7 +65,47 @@ const router = createBrowserRouter([
         path: '/aboutus',
         element: <AboutUs></AboutUs>
       },
+
+
     ]
+  },
+  {
+    path: '/dashboard',
+    element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
+  },
+  {
+    path: '/profile',
+    element: <PrivetRoute><OrganizerProfile></OrganizerProfile></PrivetRoute>
+  },
+  {
+    path: '/addcamp',
+    element: <AddCamp></AddCamp>
+  },
+  {
+    path: '/managecamp',
+    element: <MangeCamp></MangeCamp>
+  },
+  {
+    path: '/request',
+    element: <ManageRequest></ManageRequest>
+  },
+  {
+    path: '/details/:id',
+    element: <PrivetRoute><Detials></Detials></PrivetRoute>,
+    loader: () => fetch('https://medical-camp-server-mu.vercel.app/post')
+
+  },
+  {
+    path: '/postdetails/:id',
+    element: <PrivetRoute><Detials></Detials></PrivetRoute>,
+    loader: () => fetch('https://medical-camp-server-mu.vercel.app/post')
+
+  },
+  {
+    path: '/update/:id',
+    element: <Update></Update>,
+    loader: ({ params }) => fetch(`https://medical-camp-server-mu.vercel.app/join/${params.id}`)
+
   },
 ]);
 

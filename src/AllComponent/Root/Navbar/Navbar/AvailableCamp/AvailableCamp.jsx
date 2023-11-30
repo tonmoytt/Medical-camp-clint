@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Showcamp from "./Showcamp";
 import swal from "sweetalert";
+import Footer from "../../../Home/Footer/Footer";
 
 
 
@@ -25,6 +26,9 @@ const AvailableCamp = () => {
                 {
                     post?.map(data => <Showcamp key={data._id} data={data}></Showcamp>)
                 }
+            </div>
+            <div>
+                <Footer></Footer>
             </div>
         </div>
     );
