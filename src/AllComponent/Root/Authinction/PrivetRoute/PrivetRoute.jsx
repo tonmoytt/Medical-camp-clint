@@ -8,7 +8,7 @@ const PrivetRoute = ({ children }) => {
     const { user, loading } = useContext(AuthConnect)
     const location =useLocation()
     if (loading) {
-        return <progress className="progress w-full mt-6"></progress>
+        return <progress className="progress-secondary w-full mt-6"></progress>
     }
    
     if (user) {

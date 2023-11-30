@@ -18,24 +18,7 @@ const MangeCamp = () => {
 
     }, [])
 
-    // const handleDeleteClick = (id) => {
-    //     console.log(id);
-    //     const procesd = confirm('are you sure?')
-    //     if (procesd)
-    //         console.log('yes ok');
-    //     fetch(`https://medical-camp-server-mu.vercel.app/add/${id}`, {
-    //         method: 'DELETE'
-    //     })
-    //         .then(res => res.json())
-    //         .then(datas => {
-    //             console.log(datas);
-    //             if (datas.deletedCount > 0) {
-    //                 swal("Success!", "  Delete Successful  ", "success");
-
-
-    //             }
-    //         })
-    // }
+    
 
 
     return (

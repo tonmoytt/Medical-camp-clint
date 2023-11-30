@@ -25,6 +25,7 @@ import MangeCamp from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/Man
 import Update from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/Update/Update';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import OrganizerProfile from './AllComponent/Root/Navbar/Navbar/Dashboard/OrganizerProfile/OrganizerProfile';
+import Users from './AllComponent/Root/Navbar/Navbar/Dashboard/OrganizerProfile/Users/Users';
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,14 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
+  },
+  {
+    path: '/profile',
+    element: <PrivetRoute><OrganizerProfile></OrganizerProfile></PrivetRoute>
+  },
+  {
+    path: '/Users',
+    element: <PrivetRoute><Users></Users></PrivetRoute>
   },
   {
     path: '/profile',
