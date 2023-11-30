@@ -19,7 +19,7 @@ const OrganizerProfile = () => {
 
 
                 <ul className='flex gap-6'>
-                    <li className='text-3xl btn btn-outline btn-ghost font-bold '> <NavLink>Purpose</NavLink> </li>
+                    <li className='text-3xl btn btn-outline btn-ghost font-bold '> <NavLink to='/feedback'>Purpose</NavLink> </li>
                     <li className='text-3xl font-bold btn btn-outline btn-secondary  text-end ml-96'> <NavLink to='/users'>User interation</NavLink></li>
                 </ul>
             </div>

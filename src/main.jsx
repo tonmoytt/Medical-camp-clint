@@ -26,11 +26,14 @@ import Update from './AllComponent/Root/Navbar/Navbar/Dashboard/MangeCamp/Update
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import OrganizerProfile from './AllComponent/Root/Navbar/Navbar/Dashboard/OrganizerProfile/OrganizerProfile';
 import Users from './AllComponent/Root/Navbar/Navbar/Dashboard/OrganizerProfile/Users/Users';
+import Error from './AllComponent/Root/Error/Error';
+import FeedBack from './AllComponent/Root/Navbar/Navbar/Dashboard/OrganizerProfile/FeedBack/FeedBack';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -70,9 +73,13 @@ const router = createBrowserRouter([
 
     ]
   },
+
   {
     path: '/dashboard',
-    element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
+    element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
+    children : [
+      
+    ]
   },
   {
     path: '/profile',
@@ -81,6 +88,10 @@ const router = createBrowserRouter([
   {
     path: '/Users',
     element: <PrivetRoute><Users></Users></PrivetRoute>
+  },
+  {
+    path: '/feedback',
+    element: <PrivetRoute><FeedBack></FeedBack></PrivetRoute>
   },
   {
     path: '/profile',

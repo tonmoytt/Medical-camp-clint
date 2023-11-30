@@ -7,7 +7,7 @@ import swal from "sweetalert";
 // (data.modifiedCount>0)
 // (data.deletedCount === 1)
 const Detials = () => {
-    // const Navigate=useNavigate()
+    const Navigate=useNavigate()
     const [data, setdata] = useState([])
     const { id } = useParams()
     console.log(id);

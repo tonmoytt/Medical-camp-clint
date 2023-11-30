@@ -17,7 +17,7 @@ import '@smastrom/react-rating/style.css'
 const Testimonial = () => {
     const [rating, setrating] = useState(null)
     useEffect(() => {
-        fetch('/review.json')
+        fetch('https://medical-camp-server-mu.vercel.app/feedback')
             .then(res => res.json())
             .then(data => {
                 setrating(data);
