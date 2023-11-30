@@ -6,8 +6,8 @@ const Showpost = ({ post }) => {
     // eslint-disable-next-line react/prop-types
     const { date,_id, description, healthcare, fees, name, photo, provider, target } = post
     return (
-        <div className="card w-96 text-black  bg-sky-200 shadow-xl">
-            <figure><img src= {photo} alt="Shoes" /></figure>
+        <div className="card w-96 text-black p-4  bg-sky-200 shadow-xl">
+            <figure><img className="w-full h-52" src= {photo} alt="Shoes" /></figure>
             <div className="card-body">
             <h2 className="card-title"> { name}</h2>
                     <p>Specialist Provider : { provider}</p>

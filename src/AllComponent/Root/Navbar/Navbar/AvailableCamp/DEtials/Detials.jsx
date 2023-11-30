@@ -7,7 +7,7 @@ import swal from "sweetalert";
 // (data.modifiedCount>0)
 // (data.deletedCount === 1)
 const Detials = () => {
-    // const Navigate=useNavigate()
+    const Navigate=useNavigate()
     const [data, setdata] = useState([])
     const { id } = useParams()
     console.log(id);
@@ -46,8 +46,9 @@ const Detials = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                swal("Success!","successfuly request check menege request list", "success")
-                // Navigate('/request')
+                 alert('Submit successfull')
+                 event.target.reset()
+                Navigate('/camp')
 
 
             })

@@ -8,7 +8,7 @@ const Showcamp = ({data}) => {
     return (
         <div className="card w-96 p-4 bg-slate-800 shadow-xl">
             <figure>
-                <img src={photo} alt={name} />
+                <img className="w-full h-52" src={photo} alt={name} />
             </figure>
             <div className="card-body">
                 <h2 className="card-title"> {name}</h2>

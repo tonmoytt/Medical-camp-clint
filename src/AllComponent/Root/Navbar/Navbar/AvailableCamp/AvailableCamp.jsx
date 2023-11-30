@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Showcamp from "./Showcamp";
-import swal from "sweetalert";
 import Footer from "../../../Home/Footer/Footer";
 
 
@@ -12,8 +11,7 @@ const AvailableCamp = () => {
             .then(res => res.json())
             .then(data => {
                 setpost(data);
-                // console.log(data);
-                // swal("Post create", " successful", "success");
+                 
             })
     }, [])
     return (
