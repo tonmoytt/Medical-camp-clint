@@ -6,8 +6,8 @@ import img4 from './../../../../assets/Images/medicin.png'
 const Support = () => {
     return (
 
-        <div className='  px-10 '>
-            <div className='grid grid-cols-4 gap-4 border-x-8'>
+        <div className='  md:px-10 '>
+            <div className='grid md:grid-cols-4 gap-4 border-x-8'>
 
            
 

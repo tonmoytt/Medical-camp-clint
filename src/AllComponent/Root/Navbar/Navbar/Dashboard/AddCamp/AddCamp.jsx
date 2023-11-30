@@ -17,7 +17,7 @@ const AddCamp = () => {
         const photo = form.photo.value
         const date = form.date.value
         const description = form.description.value
-        const user = { name, fees, location, provider, healthcare, target, photo, date, description }
+        const user = { name, fees, location, provider, healthcare, target, photo, date, description,createdAt: new Date() }
         console.log(user);
         fetch('https://medical-camp-server-mu.vercel.app/post', {
             method: 'POST',

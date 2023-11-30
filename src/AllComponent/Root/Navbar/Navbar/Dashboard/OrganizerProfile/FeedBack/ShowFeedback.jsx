@@ -16,7 +16,7 @@ const ShowFeedback = ({ data }) => {
         const name = form.name.value
         const rating = form.rating.value
         const details = form.details.value
-        const user = { name, rating, details }
+        const user = { name, rating, details,createdAt: new Date() }
         console.log(user);
 
         fetch('https://medical-camp-server-mu.vercel.app/feedback', {

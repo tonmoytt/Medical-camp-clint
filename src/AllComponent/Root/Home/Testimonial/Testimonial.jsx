@@ -20,8 +20,9 @@ const Testimonial = () => {
         fetch('https://medical-camp-server-mu.vercel.app/feedback')
             .then(res => res.json())
             .then(data => {
-                setrating(data);
-                // console.log(data);
+                const sortedBlogs = data.sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt));
+                setrating(sortedBlogs);
+                
             })
 
     }, [])
