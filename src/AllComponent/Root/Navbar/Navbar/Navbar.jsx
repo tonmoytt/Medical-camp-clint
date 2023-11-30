@@ -1,24 +1,42 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthConnect } from "../../Authinction/Authinction";
-import swal from "sweetalert";
 import img from './../../../../assets/Images/icon user.jpg'
 import { FaHome } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthConnect)
+    const Navigate = useNavigate()
     const hendelsignout = () => {
-        logout()
-            .then(result => {
-                console.log(result.user);
 
 
-            })
-            .catch(error => {
-                console.error(error)
-                swal("Success!", "successfully Logout", "success");
-            })
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // logout set
+                logout()
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+                // navigate home
+                Navigate('/')
+            }
+        });
+
+
+
     }
     const Navlink = <>
         <li className="text-base font-semibold font-serif hover:text-cyan-400"> <NavLink to="/">
@@ -27,20 +45,20 @@ const Navbar = () => {
             }
             Home</NavLink></li>
         <li className="text-base font-semibold  hover:text-cyan-400"> <NavLink to="/camp">Available Camp</NavLink></li>
-     
+
         <li className="text-l font-semibold  hover:text-cyan-400"> <NavLink to="/dashboard">DashBoard</NavLink></li>
         <li className="text-base font-semibold   hover:text-cyan-400"> <NavLink to="/contact">Contact Us</NavLink></li>
         {
             user ? <>
                 <div className="flex gap-2">
-                     
-                        {/* <p className="mr-2 font-bold">{user?.displayName}</p> */}
 
-                        <div className="flex items-center ml-40 mr-10">
-                            <img className="h-10 w-10 mr-2 rounded-full" src={user?.photoURL} alt="" />
-                            <Link className="btn btn-outline btn-secondary" to='/signup'> <button onClick={hendelsignout}>Signout</button></Link>
-                        </div>
- 
+                    {/* <p className="mr-2 font-bold">{user?.displayName}</p> */}
+
+                    <div className="flex items-center ml-40 mr-10">
+                        <img className="h-10 w-10 mr-2 rounded-full" src={user?.photoURL} alt="" />
+                        <Link className="btn btn-outline btn-secondary" to='/signup'> <button onClick={hendelsignout}>Signout</button></Link>
+                    </div>
+
                 </div>
             </>
                 :

@@ -1,19 +1,26 @@
-
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Dashboard from '../Dashboard';
-import { Link } from 'react-router-dom';
+ 
 
 const OrganizerProfile = () => {
     const [singupUsers, setSignUpUsers] = useState()
     useEffect(() => {
         fetch('https://medical-camp-server-mu.vercel.app/signup')
             .then(res => res.json())
-            .then(user => {
-                const userData = user.slice(0, 6)
-                setSignUpUsers(userData)
-            })
+            .then(user =>  setSignUpUsers(user))
     }, [])
+
+
+     const handleDelete= (id) =>{
+        console.log(id);
+        fetch(`https://medical-camp-server-mu.vercel.app/signup/${id}`,{
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+         
+     }
     return (
         <div className='flex'>
 
@@ -64,7 +71,7 @@ const OrganizerProfile = () => {
 
                                             <div className='mt-6 pl-16'>
 
-                                                <button onClick={() => handleDelete(_id)} className="mr-4 btn btn-outline btn-error ">Delete</button>
+                                                <button onClick={() => handleDelete(singupUsers._id)} className="mr-4 btn btn-outline btn-error ">Delete</button>
 
                                             </div>
                                         </tr>
